@@ -3,13 +3,13 @@
 
 <img class='artist-photo' src="{{artist.photoUrl}}">
 
-<h3>Songs</h3>
+<h3>Works</h3>
 <ul>
-  {{#each songs}}
-    <!-- build the list element for each song -->
+  {{#each works}}
+    <!-- build the list element for each work -->
     <li>
-      <a href="/songs/{{id}}">
-        {{title}} ({{album}})
+      <a href="/works/{{id}}">
+        {{title}} {{!-- ({{album}}) --}}
       </a>
     </li>
 

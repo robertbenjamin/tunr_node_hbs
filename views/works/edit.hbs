@@ -1,0 +1,22 @@
+<h2>Edit Work</h2>
+
+<form action="/works/{{work.id}}?_method=PUT" method="post">
+
+  <label for="title">Title:</label>
+  <input name="title" value="{{work.title}}">
+
+  <label for="album">Album:</label>
+  <input name="album" value="{{work.album}}">
+
+  <label for="previewUrl">Preview URL:</label>
+  <input name="previewUrl" value="{{work.previewUrl}}">
+
+  <label for="artistId">Artist ID:</label>
+  <input name="artistId" value="{{work.artistId}}">
+
+  <input type="submit" value="Edit">
+</form>
+
+<form action="/works/{{work.id}}?_method=DELETE" method="post">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>

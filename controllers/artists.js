@@ -32,10 +32,10 @@ router.get("/artists/:id", function(req, res){
     Artist.sing();
     a.shout();
     artist = a;
-    return artist.getSongs()
+    return artist.getWorks()
   })
-  .then(function(songs){
-    res.render("artists/show", {artist: artist, songs: songs});
+  .then(function(works){
+    res.render("artists/show", {artist: artist, works: works});
   });
 });
 
@@ -47,7 +47,7 @@ router.get("/artists/:id/edit", function(req, res){
 });
 
 router.put("/artists/:id", function(req, res){
-  var updatedArtist, songs;
+  var updatedArtist, works;
   Artist.findById(req.params.id)
   .then(function(artist){
     if(!artist) return error(res, "not found");
@@ -57,8 +57,8 @@ router.put("/artists/:id", function(req, res){
     updatedArtist = artist;
     return updatedArtist.getSongs()
   })
-  .then(function(songs){
-    res.render("artists/show", {artist: updatedArtist, songs: songs});
+  .then(function(works){
+    res.render("artists/show", {artist: updatedArtist, works: works});
   });
 });
 

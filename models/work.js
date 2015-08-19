@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize){
-  return sequelize.define("song", {
+  return sequelize.define("work", {
     title: Sequelize.STRING,
     album: Sequelize.STRING,
     previewUrl: Sequelize.STRING,

@@ -11,14 +11,14 @@ app.use("/", express.static(path.join(__dirname + "/public")));
 app.set("view engine", "hbs");
 
 var artistsController = require("./controllers/artists");
-var songsController = require("./controllers/songs");
+var worksController = require("./controllers/works");
 
 app.get("/", function(req, res){
   res.render("home");
 });
 
 app.use("/", artistsController);
-app.use("/", songsController);
+app.use("/", worksController);
 
 app.listen(3000, function(){
   console.log("Listening on port 3000");

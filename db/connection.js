@@ -1,16 +1,16 @@
 var Sequelize = require("sequelize");
 var sequelize = new Sequelize("postgres:///tunr_db");
 var Artist = sequelize.import("../models/artist");
-var Song = sequelize.import("../models/song");
+var Work = sequelize.import("../models/work");
 
-Song.belongsTo(Artist);
-Artist.hasMany(Song);
+Work.belongsTo(Artist);
+Artist.hasMany(Work);
 
 module.exports = {
   Sequelize: Sequelize,
   sequelize: sequelize,
   models: {
-    Song: Song,
+    Work: Work,
     Artist: Artist
   }
 }
